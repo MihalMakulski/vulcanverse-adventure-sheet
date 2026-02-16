@@ -1,0 +1,5 @@
+{
+  "name": "VulcanVerse Adventure Sheet",
+  "description": "A mobile-first, fantasy-styled character sheet for the VulcanVerse gamebook series, featuring automated persistence and an integrated dice roller.",
+  "requestFramePermissions": []
+}
