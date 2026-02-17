@@ -117,8 +117,14 @@ const App: React.FC = () => {
               onChange={(e) => updateField('name', e.target.value)}
             />
           </div>
-        </section>
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="flex flex-col gap-1">
+            <label className="font-sc text-sm text-stone-800 tracking-wider uppercase pl-1">God</label>
+            <input 
+              className="w-full rough-border overlay-paper text-2xl font-sc text-black p-3 outline-none focus:border-stone-900 transition-colors"
+              value={data.god}
+              onChange={(e) => updateField('god', e.target.value)}
+            />
+          </div>
           <div className="flex flex-col gap-1">
             <label className="font-sc text-sm text-stone-800 tracking-wider uppercase pl-1">Current Location</label>
             <input 
