@@ -90,20 +90,14 @@ const App: React.FC = () => {
               onChange={(e) => updateField('name', e.target.value)}
             />
           </div>
+        </section>
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="flex flex-col gap-1">
             <label className="font-sc text-sm text-stone-800 tracking-wider uppercase pl-1">Current Location</label>
             <input 
-              className="w-full rough-border overlay-paper text-2xl font-sc text-black p-3 outline-none focus:border-stone-900 transition-colors"
+              className="w-full rough-border overlay-paper text-xl font-sc text-black p-3 outline-none focus:border-stone-900 transition-colors"
               value={data.location}
               onChange={(e) => updateField('location', e.target.value)}
-            />
-          </div>
-          <div className="flex flex-col gap-1">
-            <label className="font-sc text-sm text-stone-800 tracking-wider uppercase pl-1">God</label>
-            <input 
-              className="w-full rough-border overlay-paper text-xl font-sc text-black p-3 outline-none focus:border-stone-900 transition-colors"
-              value={data.god}
-              onChange={(e) => updateField('god', e.target.value)}
             />
           </div>
           <div className="flex flex-col gap-1">
@@ -140,27 +134,22 @@ const App: React.FC = () => {
               {data.isWounded && <div className="w-4 h-4 bg-white rotate-45" />}
             </div>
           </div>
+          <p>When ticked deduct 1 from any attribute rolls</p>
         </section>
 
         {/* Economy & Status Row */}
         <section className="flex flex-col gap-2">
           <h3 className="font-sc text-stone-900 text-lg tracking-widest uppercase border-b border-stone-900/10 pb-1">Status & Wealth</h3>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             <StatBox label="Glory" value={data.glory} onChange={(v) => updateField('glory', v)} />
             <StatBox label="Scars" value={data.scars} onChange={(v) => updateField('scars', v)} />
             <StatBox label="Money" value={data.money} onChange={(v) => updateField('money', v)} />
+            <StatBox label="Blessings" value={data.blessings} onChange={(v) => updateField('blessings', v)} />  
           </div>
         </section>
 
         {/* Freeform Fields */}
         <div className="flex flex-col gap-6">
-          <TextAreaField 
-            label="Blessings (maximum of 3)" 
-            value={data.blessings} 
-            onChange={(v) => updateField('blessings', v)}
-            rows={2}
-          />
-
           <TextAreaField 
             label="Possessions (maximum of 20)" 
             value={data.possessions} 

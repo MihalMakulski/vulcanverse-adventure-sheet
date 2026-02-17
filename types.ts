@@ -18,8 +18,8 @@ export interface HeroData {
   glory: number;
   scars: number;
   money: number;
+  blessings: number;
   
-  blessings: string;
   possessions: string;
   codewords: string;
   titles: string;
@@ -43,8 +43,8 @@ export const INITIAL_SHEET_DATA: HeroData = {
   glory: 0,
   scars: 0,
   money: 0,
+  blessings: 0,
   
-  blessings: "",
   possessions: "",
   codewords: "",
   titles: "",
