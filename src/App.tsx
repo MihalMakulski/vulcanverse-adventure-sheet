@@ -267,8 +267,7 @@ const App: React.FC = () => {
 
       {/* Footer Branding */}
       <footer className="w-full py-12 text-center text-stone-900/50 font-sc text-xs tracking-wider">
-        Inspired by <a href="https://daelsepara.github.io/vulcanversejs/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">vulcanversejs</a>
-        to use with <a href="https://fabledlands.blogspot.com/p/vulcanverse-solo-roleplaying-gamebooks.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">Vulcanverse solo roleplaying gamebooks</a> by Dave Morris & Jamie Thomson 
+        Inspired by <a href="https://daelsepara.github.io/vulcanversejs/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">vulcanversejs</a> to use with <a href="https://fabledlands.blogspot.com/p/vulcanverse-solo-roleplaying-gamebooks.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">Vulcanverse solo roleplaying gamebooks</a> by Dave Morris & Jamie Thomson 
       </footer>
     </div>
   );
