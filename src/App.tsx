@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { INITIAL_SHEET_DATA, HeroData, BookKey } from '../types';
 import { StatBox } from './components/StatBox';
 import { TextAreaField } from './components/TextAreaField';
@@ -19,6 +19,7 @@ const App: React.FC = () => {
   const [data, setData] = useState<HeroData>(INITIAL_SHEET_DATA);
   const [isMapOpen, setIsMapOpen] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
@@ -64,6 +65,32 @@ const App: React.FC = () => {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
   }, [data]);
+
+  const importSheet = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const content = e.target?.result as string;
+        const parsed = JSON.parse(content);
+        // Basic validation/merging with initial data structure
+        setData({ ...INITIAL_SHEET_DATA, ...parsed });
+        alert('Character sheet imported successfully!');
+      } catch (error) {
+        console.error('Failed to parse imported file', error);
+        alert('Failed to import sheet. Invalid file format.');
+      }
+    };
+    reader.readAsText(file);
+    // Reset input value to allow importing the same file again if needed
+    event.target.value = '';
+  }, []);
+
+  const triggerImport = useCallback(() => {
+    fileInputRef.current?.click();
+  }, []);
 
   if (!isInitialized) return null;
 
@@ -209,13 +236,28 @@ const App: React.FC = () => {
             </button>
           </div>
 
-          {/* Download Button */}
-          <button 
-            onClick={downloadSheet}
-            className="w-full py-4 rough-border overlay-paper font-sc text-stone-900 uppercase tracking-[0.1em] hover:bg-stone-900/5 transition-all active:translate-y-0.5 text-sm"
-          >
-            Download Sheet (.json)
-          </button>
+          {/* Download & Import Buttons */}
+          <div className="flex gap-4">
+            <button 
+              onClick={downloadSheet}
+              className="flex-1 py-4 rough-border overlay-paper font-sc text-stone-900 uppercase tracking-[0.1em] hover:bg-stone-900/5 transition-all active:translate-y-0.5 text-sm"
+            >
+              Download Sheet (.json)
+            </button>
+            <button 
+              onClick={triggerImport}
+              className="flex-1 py-4 rough-border overlay-paper font-sc text-stone-900 uppercase tracking-[0.1em] hover:bg-stone-900/5 transition-all active:translate-y-0.5 text-sm"
+            >
+              Import Sheet
+            </button>
+            <input 
+              type="file" 
+              ref={fileInputRef}
+              onChange={importSheet}
+              accept=".json"
+              className="hidden"
+            />
+          </div>
         </section>
       </main>
 
