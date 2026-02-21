@@ -176,8 +176,8 @@ const App: React.FC = () => {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             <StatBox label="Glory" value={data.glory} onChange={(v) => updateField('glory', v)} />
             <StatBox label="Scars" value={data.scars} onChange={(v) => updateField('scars', v)} />
-            <StatBox label="Money" value={data.money} onChange={(v) => updateField('money', v)} />
             <StatBox label="Blessings" value={data.blessings} onChange={(v) => updateField('blessings', v)} />  
+            <StatBox label="Money" value={data.money} onChange={(v) => updateField('money', v)} isFreeForm = {true} />
           </div>
         </section>
 
@@ -212,6 +212,27 @@ const App: React.FC = () => {
           />
         </div>
 
+         {/* Tracking Section */}
+        <section className="flex flex-col gap-2">
+          <h3 className="font-sc text-stone-900 text-lg tracking-widest uppercase border-b border-stone-900/10 pb-1">Tracking</h3>
+           <div className="flex flex-col gap-6 mt-6">
+            <TextAreaField 
+              label="Ticks" 
+              value={data.ticks} 
+              onChange={(v) => updateField('ticks', v)}
+              rows={6}
+            />
+
+            <TextAreaField 
+              label="Vault" 
+              value={data.vault} 
+              onChange={(v) => updateField('vault', v)}
+              rows={8}
+            />
+          </div>
+        </section>
+
+        
         {/* Bottom Controls */}
         <section className="mt-8 pt-12 border-t border-stone-900/10 flex flex-col gap-6">
           <div className="flex flex-col gap-1 w-full">
