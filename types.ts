@@ -24,7 +24,7 @@ export interface HeroData {
   codewords: string;
   titles: string;
   notes: string;
-  ticks: string;
+  ticks: Array<Array<string>>;
   vault: string;
 }
 
@@ -51,6 +51,6 @@ export const INITIAL_SHEET_DATA: HeroData = {
   codewords: "",
   titles: "",
   notes: "",
-  ticks: "",
+  ticks: [],
   vault: "",
 };

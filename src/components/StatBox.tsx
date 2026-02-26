@@ -40,8 +40,6 @@ export const StatBox: React.FC<StatBoxProps> = ({ label, value, onChange, min = 
               +
             </button>
         </div> }
-       
-      
     </div>
   );
 };
