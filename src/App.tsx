@@ -217,12 +217,6 @@ const App: React.FC = () => {
         <section className="flex flex-col gap-2">
           <h3 className="font-sc text-stone-900 text-lg tracking-widest uppercase border-b border-stone-900/10 pb-1">Tracking</h3>
            <div className="flex flex-col gap-6 mt-6">
-            {/* <TextAreaField 
-              label="Ticks" 
-              value={data.ticks} 
-              onChange={(v) => updateField('ticks', v)}
-              rows={6}
-            /> */}
             <TicksTracker sectionsTicked={data.ticks} updateField={updateField}/>
 
             <TextAreaField 
