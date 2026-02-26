@@ -5,7 +5,7 @@ interface TicksTrackerProps {
   onAddSextion: () => void;
 }
 
-export const TicksTracker: React.FC<TicksTrackerProps> = ({ sectionsTicked, updateField }) => {
+export const TicksTracker: React.FC<TicksTrackerProps> = ({ sectionsTicked = [], updateField }) => {
   const [section, setSection] = useState("");
   const [notes, setNotes] = useState("");
 
@@ -47,7 +47,7 @@ export const TicksTracker: React.FC<TicksTrackerProps> = ({ sectionsTicked, upda
       <div className="mt-3">Section ticks:</div>
       <div className="h-50 w-full rough-border overlay-paper text-black p-3 overflow-y-auto overflow-x-hidden">
         <ul className="flex flex-col gap-1 divide-y">
-          {sectionsTicked.sort((sectionA, sectionB) => +sectionA[0] - +sectionB[0]).map((sectionData) => {
+          {[...sectionsTicked].sort((sectionA, sectionB) => +sectionA[0] - +sectionB[0]).map((sectionData) => {
             const [section, notes] = sectionData;
             return (
               <li key={section} className="flex justify-between p-1">
