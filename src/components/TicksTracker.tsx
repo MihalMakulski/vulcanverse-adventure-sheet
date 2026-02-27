@@ -32,7 +32,7 @@ export const TicksTracker: React.FC<TicksTrackerProps> = ({ sectionsTicked, upda
           />  
         </div>
         <button 
-          className="w-9 h-9 flex items-center justify-center bg-stone-900/10 hover:bg-stone-900/20 transition-colors text-stone-900 border border-stone-900/30 rounded"
+          className="w-9 h-9 flex shrink-0 items-center justify-center bg-stone-900/10 hover:bg-stone-900/20 transition-colors text-stone-900 border border-stone-900/30 rounded"
           onClick={() => {
             if (!section) return;
             const filteredTicks = sectionsTickedCopy.filter((sectionData) => sectionData[0] !== section);
@@ -46,8 +46,8 @@ export const TicksTracker: React.FC<TicksTrackerProps> = ({ sectionsTicked, upda
         </button>
       </div>
       <div className="mt-3">Section ticks:</div>
-      <div className="max-h-50 w-full border-2 border-solid rounded-md overlay-paper text-black p-2 overflow-x-auto">
-        <ul className="grid gap-y-1 gap-x-3 divide-y  grid-cols-2">
+      <div className="h-50 w-full border-2 border-solid rounded-md overlay-paper text-black p-2 overflow-x-auto">
+        <ul className="flex flex-col gap-1 divide-y">
           {!sectionsTickedCopy.length ? 
             <span>No section ticks yet.</span> :
             sectionsTickedCopy.sort((sectionA, sectionB) => +sectionA[0] - +sectionB[0]).map((sectionData) => {
