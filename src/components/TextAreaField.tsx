@@ -14,7 +14,7 @@ export const TextAreaField: React.FC<TextAreaFieldProps> = ({ label, value, onCh
     <div className="flex flex-col w-full gap-1">
       <label className="font-sc text-sm text-stone-800 tracking-wider uppercase pl-1">{label}</label>
       <textarea
-        className="w-full rough-border overlay-paper text-black p-3 outline-none focus:border-stone-900 transition-colors resize-none placeholder:text-stone-500"
+        className="w-full border-2 border-solid rounded-md overlay-paper text-black p-3 outline-none focus:border-stone-900 transition-colors resize-none placeholder:text-stone-500"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}

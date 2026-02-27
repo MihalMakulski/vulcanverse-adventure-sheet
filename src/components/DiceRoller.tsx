@@ -34,7 +34,7 @@ export const DiceRoller: React.FC = () => {
       <div className="text-[10px] font-sc text-stone-700 opacity-0 group-hover:opacity-100 transition-opacity mb-1 uppercase tracking-widest">
         Tap to Roll
       </div>
-      <div className={`flex gap-3 p-3 rough-border overlay-paper bg-white/40 shadow-xl transition-transform active:scale-95 ${isRolling ? 'rolling' : ''}`}>
+      <div className={`flex gap-3 p-3 border-2 border-solid rounded-md overlay-paper bg-white/40 shadow-xl transition-transform active:scale-95 ${isRolling ? 'rolling' : ''}`}>
         <DiceFace value={dice[0]} />
         <DiceFace value={dice[1]} />
       </div>

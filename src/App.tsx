@@ -113,7 +113,7 @@ const App: React.FC = () => {
           <div className="flex flex-col gap-1">
             <label className="font-sc text-sm text-stone-800 tracking-wider uppercase pl-1">Name</label>
             <input 
-              className="w-full rough-border overlay-paper text-2xl font-sc text-black p-3 outline-none focus:border-stone-900 transition-colors"
+              className="w-full border-2 border-solid rounded-md overlay-paper text-2xl font-sc text-black p-3 outline-none focus:border-stone-900 transition-colors"
               value={data.name}
               onChange={(e) => updateField('name', e.target.value)}
             />
@@ -121,7 +121,7 @@ const App: React.FC = () => {
           <div className="flex flex-col gap-1">
             <label className="font-sc text-sm text-stone-800 tracking-wider uppercase pl-1">God</label>
             <input 
-              className="w-full rough-border overlay-paper text-2xl font-sc text-black p-3 outline-none focus:border-stone-900 transition-colors"
+              className="w-full border-2 border-solid rounded-md overlay-paper text-2xl font-sc text-black p-3 outline-none focus:border-stone-900 transition-colors"
               value={data.god}
               onChange={(e) => updateField('god', e.target.value)}
             />
@@ -129,7 +129,7 @@ const App: React.FC = () => {
           <div className="flex flex-col gap-1">
             <label className="font-sc text-sm text-stone-800 tracking-wider uppercase pl-1">Current Location</label>
             <input 
-              className="w-full rough-border overlay-paper text-xl font-sc text-black p-3 outline-none focus:border-stone-900 transition-colors"
+              className="w-full border-2 border-solid rounded-md overlay-paper text-xl font-sc text-black p-3 outline-none focus:border-stone-900 transition-colors"
               value={data.location}
               onChange={(e) => updateField('location', e.target.value)}
             />
@@ -137,7 +137,7 @@ const App: React.FC = () => {
           <div className="flex flex-col gap-1">
             <label className="font-sc text-sm text-stone-800 tracking-wider uppercase pl-1">Companion</label>
             <input 
-              className="w-full rough-border overlay-paper text-xl font-sc text-black p-3 outline-none focus:border-stone-900 transition-colors"
+              className="w-full border-2 border-solid rounded-md overlay-paper text-xl font-sc text-black p-3 outline-none focus:border-stone-900 transition-colors"
               value={data.companion}
               onChange={(e) => updateField('companion', e.target.value)}
             />
@@ -159,12 +159,12 @@ const App: React.FC = () => {
         <section className="flex flex-col gap-2">
           <div 
             onClick={() => updateField('isWounded', !data.isWounded)}
-            className={`w-full rough-border overlay-paper p-4 cursor-pointer flex items-center justify-between transition-colors ${data.isWounded ? 'bg-red-900/15 border-red-950' : 'hover:bg-stone-900/5'}`}
+            className={`w-full border-2 border-solid rounded-md overlay-paper p-4 cursor-pointer flex items-center justify-between transition-colors ${data.isWounded ? 'bg-red-900/15 border-red-950' : 'hover:bg-stone-900/5'}`}
           >
             <span className={`font-sc text-lg tracking-widest uppercase ${data.isWounded ? 'text-red-950 font-bold' : 'text-stone-900'}`}>
               WOUND
             </span>
-            <div className={`w-8 h-8 rough-border flex items-center justify-center ${data.isWounded ? 'bg-red-950 border-red-950' : 'bg-transparent'}`}>
+            <div className={`w-8 h-8 border-2 border-solid rounded-md flex items-center justify-center ${data.isWounded ? 'bg-red-950 border-red-950' : 'bg-transparent'}`}>
               {data.isWounded && <div className="w-4 h-4 bg-white rotate-45" />}
             </div>
           </div>
@@ -234,7 +234,7 @@ const App: React.FC = () => {
           <div className="flex flex-col gap-1 w-full">
             <label className="font-sc text-xs text-stone-800 tracking-wider uppercase pl-1">Current Book</label>
             <select 
-              className="w-full rough-border overlay-paper font-sc text-lg text-black p-3 outline-none focus:border-stone-900 bg-transparent"
+              className="w-full border-2 border-solid rounded-md overlay-paper font-sc text-lg text-black p-3 outline-none focus:border-stone-900 bg-transparent"
               value={data.currentBook}
               onChange={(e) => updateField('currentBook', e.target.value as BookKey)}
             >
@@ -247,13 +247,13 @@ const App: React.FC = () => {
           <div className="w-full flex flex-col sm:flex-row justify-between items-stretch gap-4">
             <button 
               onClick={() => setIsMapOpen(true)}
-              className="flex-1 py-4 rough-border overlay-paper font-sc text-stone-900 uppercase tracking-[0.2em] hover:bg-stone-900/5 transition-all active:translate-y-0.5"
+              className="flex-1 py-4 border-2 border-solid rounded-md overlay-paper font-sc text-stone-900 uppercase tracking-[0.2em] hover:bg-stone-900/5 transition-all active:translate-y-0.5"
             >
               Open Map
             </button>
             <button 
               onClick={resetSheet}
-              className="px-6 py-4 rough-border overlay-paper font-sc text-red-950 uppercase text-xs hover:text-red-700 transition-all"
+              className="px-6 py-4 border-2 border-solid rounded-md overlay-paper font-sc text-red-950 uppercase text-xs hover:text-red-700 transition-all"
             >
               Reset Sheet
             </button>
@@ -263,13 +263,13 @@ const App: React.FC = () => {
           <div className="flex gap-4">
             <button 
               onClick={downloadSheet}
-              className="flex-1 py-4 rough-border overlay-paper font-sc text-stone-900 uppercase tracking-[0.1em] hover:bg-stone-900/5 transition-all active:translate-y-0.5 text-sm"
+              className="flex-1 py-4 border-2 border-solid rounded-md overlay-paper font-sc text-stone-900 uppercase tracking-[0.1em] hover:bg-stone-900/5 transition-all active:translate-y-0.5 text-sm"
             >
               Download Sheet (.json)
             </button>
             <button 
               onClick={triggerImport}
-              className="flex-1 py-4 rough-border overlay-paper font-sc text-stone-900 uppercase tracking-[0.1em] hover:bg-stone-900/5 transition-all active:translate-y-0.5 text-sm"
+              className="flex-1 py-4 border-2 border-solid rounded-md overlay-paper font-sc text-stone-900 uppercase tracking-[0.1em] hover:bg-stone-900/5 transition-all active:translate-y-0.5 text-sm"
             >
               Import Sheet
             </button>

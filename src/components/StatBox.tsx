@@ -14,7 +14,7 @@ interface StatBoxProps {
 
 export const StatBox: React.FC<StatBoxProps> = ({ label, value, onChange, min = 0, max = 99, step = 1, isLarge = false, isFreeForm = false }) => {
   return (
-    <div className={`flex flex-col items-center justify-center p-2 rough-border overlay-paper ${isLarge ? 'min-w-[100px]' : 'min-w-[70px]'}`}>
+    <div className={`flex flex-col items-center justify-center p-2 border-2 border-solid rounded-md overlay-paper ${isLarge ? 'min-w-[100px]' : 'min-w-[70px]'}`}>
       <span className="text-xs font-sc uppercase tracking-widest text-stone-800 mb-1">{label}</span>
       
         { isFreeForm ? 
@@ -22,7 +22,7 @@ export const StatBox: React.FC<StatBoxProps> = ({ label, value, onChange, min = 
             type="number" 
             value={value}
             onChange={({ target }) => onChange(target.value)}
-            className="w-full rough-border overlay-paper text-black text-center p-1 outline-none focus:border-stone-900 transition-colors" 
+            className="w-full border-2 border-solid rounded-md overlay-paper text-black text-center p-1 outline-none focus:border-stone-900 transition-colors" 
           /> 
           :  
           <div className="flex items-center gap-2">

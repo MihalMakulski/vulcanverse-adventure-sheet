@@ -24,7 +24,7 @@ export const MapModal: React.FC<MapModalProps> = ({ isOpen, onClose, book }) => 
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-2 md:p-4 bg-stone-900/80 backdrop-blur-md">
-      <div className="relative w-full max-w-5xl max-h-[95vh] rough-border overlay-paper bg-[#f4ece1] p-1 overflow-hidden flex flex-col shadow-2xl animate-in fade-in zoom-in duration-300">
+      <div className="relative w-full max-w-5xl max-h-[95vh] border-2 border-solid rounded-md overlay-paper bg-[#f4ece1] p-1 overflow-hidden flex flex-col shadow-2xl animate-in fade-in zoom-in duration-300">
         <div className="flex justify-between items-center p-3 md:p-4 border-b border-stone-900/20 bg-[#ece2d3]">
           <h2 className="text-lg md:text-2xl font-sc text-stone-900 tracking-widest uppercase truncate pr-4">
             {MAP_TITLES[book]}
