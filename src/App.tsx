@@ -129,6 +129,7 @@ const App: React.FC = () => {
           <div className="flex flex-col gap-1">
             <label className="font-sc text-sm text-stone-800 tracking-wider uppercase pl-1">Current Location</label>
             <input 
+              type="number"
               className="w-full border-2 border-solid rounded-md overlay-paper text-xl font-sc text-black p-3 outline-none focus:border-stone-900 transition-colors"
               value={data.location}
               onChange={(e) => updateField('location', e.target.value)}
@@ -188,14 +189,14 @@ const App: React.FC = () => {
             label="Possessions (maximum of 20)" 
             value={data.possessions} 
             onChange={(v) => updateField('possessions', v)}
-            rows={4}
+            rows={5}
           />
           
           <TextAreaField 
             label="Codewords" 
             value={data.codewords} 
             onChange={(v) => updateField('codewords', v)}
-            rows={3}
+            rows={5}
           />
 
           <TextAreaField 
@@ -209,7 +210,7 @@ const App: React.FC = () => {
             label="Adventure Notes" 
             value={data.notes} 
             onChange={(v) => updateField('notes', v)}
-            rows={8}
+            rows={5}
           />
         </div>
 
@@ -217,13 +218,13 @@ const App: React.FC = () => {
         <section className="flex flex-col gap-2">
           <h3 className="font-sc text-stone-900 text-lg tracking-widest uppercase border-b border-stone-900/10 pb-1">Tracking</h3>
            <div className="flex flex-col gap-6 mt-3">
-            <TicksTracker sectionsTicked={data.ticks} updateField={updateField}/>
+            <TicksTracker currentBook={data.currentBook} sectionsTicked={data.ticks} updateField={updateField}/>
 
             <TextAreaField 
               label="Vault" 
               value={data.vault} 
               onChange={(v) => updateField('vault', v)}
-              rows={8}
+              rows={5}
             />
           </div>
         </section>
